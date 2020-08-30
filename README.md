@@ -1,2 +1,2 @@
 # CS400-Projects
- All CS400 Projects and Programs (except the Final Project) written by Michael Goldstein
+All programs in this repository were written by me, Michael Goldstein, for my CS 400 course at UW - Madison during the Spring 2019 semester.
