@@ -1,0 +1,29 @@
+{ "badpackages" : [
+
+{
+  "badname":"A",
+  "baddependency": "B"
+},
+
+{
+  "name":"B",
+  "dependencies": ["D", "E"]
+},
+
+{
+  "name":"C",
+  "dependencies": ["E"]
+},
+
+{
+  "worsename":"D",
+  "dependencies": ["E"]
+},
+
+{
+  "name":"E",
+  "dependencies": ["G"]
+}
+
+
+] }

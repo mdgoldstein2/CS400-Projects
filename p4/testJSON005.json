@@ -1,0 +1,40 @@
+{ "packages" : [
+
+{
+  "name":"G",
+  "dependencies": ["A", "Z"]
+},
+
+{
+  "name":"D",
+  "dependencies": ["L", "E"]
+},
+
+{
+  "name":"Z",
+  "dependencies": ["W", "X", "Y"]
+},
+
+{
+  "name":"Y",
+  "dependencies": ["X"]
+},
+
+{
+  "name":"W",
+  "dependencies": ["E"]
+}
+
+{
+  "name":"F",
+  "dependencies": ["C"]
+}
+
+{
+  "name":"M",
+  "dependencies": ["O"]
+}
+
+
+
+] }

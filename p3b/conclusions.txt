@@ -1,0 +1,39 @@
+p3b CONCLUSIONS.TXT
+
+
+Complete p3b and answer the following questions using results of running
+Java Flight Recorder and Java Mission Control to justify your conclusions..
+
+
+1) What can you tell about the performance of your hash table implementation compared to Java's tree map? 
+Explain why (or when) your hash table is better or worse than Java's Tree Map.
+
+My hash table implementation is faster than tree map. It is faster than tree map when just inserting and retrieving because a hash table with a good hash function and efficient collision
+handling should insert and retrieve at a complexity of approximately of O(1), as only the hash index should be calculated and the value at that hash index should be returned, which happens
+in constant runtime (unless rehashing or collision handling needs to happen, which is only rarely). Java's tree map uses a red-black tree, which has an insert and retrieve complexity of
+O(Height), and height grows at worst at 2(log(n)), the hash table will be faster when inserting and retrieving once n is large enough that tree map has to execute more instructions than
+the constant-time hash function and return from a hash table.
+2) What did you observe in java mission control to come to the conclusion above?
+
+
+
+I observed that for a large n of 10000000, the CPU spent far more time executing code in tree map than code in hash table, the CPU spent longer executing tree map insertion (TreeMap.put())
+than hash table insertion (HashTable.insert()), and the CPU spent longer executing tree map retrieval (TreeMap.get()) than hash table retrieval (HashTable.get()). Therefore, at large vales of n,
+hash table appears to run much faster than treemap at large values of n.
+3) SCREENSHOT_001.PNG NOTES: Briefly describe what this image 001 shows
+
+This screenshot shows the Hot Classes section, which shows that the CPU spent 70.82% of runtime executing code for tree map compared to only 14.29% of runtime for hash table, indicating
+hash table is faster for the given large n.
+
+
+4) SCREENSHOT_002.PNG NOTES: Briefly describe what this image 002 shows
+
+
+
+This screenshot shows that Hot Methods section, which shows that tree map insertion (TreeMap.put()) took up 45.9% of runtime, much more than hash table insertion (HashTable.insert()),
+which took up to 3.65% of runtime (along with rehashing, which took up an additional 10.33% of runtime). It also shows that tree map retrieval (TreeMap.get()) took up 14.89% of runtime,
+also much more that hash table retrieval (HashTable.get()), which took up 0.3% of runtime. This indicates that hash table insertion, even with necessary rehashing, is much faster than tree
+map insertion, and hash table retrieval is much faster than tree map retrieval for the given large n.
+5) Describe other screenshots if you include them in your submission.
+
+I have no other screenshots.
